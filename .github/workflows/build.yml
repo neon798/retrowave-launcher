@@ -1,0 +1,35 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: temurin
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Accept Android SDK licenses
+        run: yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses || true
+
+      - name: Build with Gradle
+        run: ./gradlew assembleLawnWithQuickstepGithubDebug --no-daemon
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk
+          path: build/outputs/apk/**/*.apk
