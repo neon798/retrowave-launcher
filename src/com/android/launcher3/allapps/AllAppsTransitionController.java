@@ -43,6 +43,7 @@ import android.view.animation.Interpolator;
 
 import androidx.annotation.FloatRange;
 import androidx.annotation.Nullable;
+import androidx.core.graphics.ColorUtils;
 
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.DeviceProfile.OnDeviceProfileChangeListener;
@@ -199,7 +200,8 @@ public class AllAppsTransitionController
         mProgress = 1f;
         mIsVerticalLayout = dp.isVerticalBarLayout();
         mShouldShowAllAppsOnSheet = dp.shouldShowAllAppsOnSheet();
-        mNavScrimFlag = Themes.getAttrBoolean(l, R.attr.isMainColorDark)
+        int allAppsScrimColor = Themes.getAttrColor(l, R.attr.allAppsScrimColor);
+        mNavScrimFlag = ColorUtils.calculateLuminance(allAppsScrimColor) < 0.5f
                 ? FLAG_DARK_NAV : FLAG_LIGHT_NAV;
 
         setShiftRange(dp.allAppsShiftRange);

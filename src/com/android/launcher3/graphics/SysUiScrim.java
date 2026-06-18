@@ -110,12 +110,12 @@ public class SysUiScrim implements View.OnAttachStateChangeListener {
 
         mTopMaskBitmap = mHideSysUiScrim ? null
                 : createDitheredAlphaMask(mTopMaskHeight,
-                        new int[] { 0x3DFFFFFF, 0x0AFFFFFF, 0x00FFFFFF },
+                        new int[] { 0x3D7C3AED, 0x0A7C3AED, 0x007C3AED },
                         new float[] { 0f, 0.7f, 1f });
-        mTopMaskPaint.setColor(0xFF222222);
+        mTopMaskPaint.setColor(0xFF7C3AED);
         mBottomMaskBitmap = mHideSysUiScrim ? null
                 : createDitheredAlphaMask(mBottomMaskHeight,
-                        new int[] { 0x00FFFFFF, 0x2FFFFFFF },
+                        new int[] { 0x007C3AED, 0x2F7C3AED },
                         new float[] { 0f, 1f });
 
         if (!mHideSysUiScrim) {

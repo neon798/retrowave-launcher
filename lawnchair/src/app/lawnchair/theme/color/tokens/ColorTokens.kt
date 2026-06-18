@@ -10,11 +10,11 @@ object ColorTokens {
     // Synthwave Neon Palette
     val SynthwavePurple = StaticColorToken(0xFF7C3AED)
     val SynthwavePink = StaticColorToken(0xFFEC4899)
-    val SynthwaveOrange = StaticColorToken(0xFFF97316)
+    val SynthwaveOrange = StaticColorToken(0xFFFF5500)
     val SynthwaveBlue = StaticColorToken(0xFF0EA5E9)
     val SynthwavePurpleLight = StaticColorToken(0xFFA78BFA)
     val SynthwavePinkLight = StaticColorToken(0xFFF9A8D4)
-    val SynthwaveOrangeLight = StaticColorToken(0xFFFDBA74)
+    val SynthwaveOrangeLight = StaticColorToken(0xFFFF8C42)
     val SynthwaveBlueLight = StaticColorToken(0xFF7DD3FC)
 
     val Neutral1_0 = SwatchColorToken(Swatch.Neutral1, Shade.S0)
@@ -102,7 +102,7 @@ object ColorTokens {
 
     @JvmField val AllAppsHeaderProtectionColor = DayNightColorToken(SurfaceContainerHighest, SurfaceContainerLow)
 
-    @JvmField val AllAppsScrimColor = SynthwavePurple.setAlpha(.40f)
+    @JvmField val AllAppsScrimColor = SynthwavePurple.setAlpha(.20f)
 
     @JvmField val AllAppsTabBackground = DayNightColorToken(Neutral1_100, Neutral1_800.setLStar(22.0))
 
